@@ -1,7 +1,7 @@
 # c1000a_sec
 Security details and vulnerabilities on the Actiontec C1000a router.
 These are the results of my reverse engineering of the Actiontec C1000a router running firmware version 31.90L. Notes about
-the reverse engineering efforts are [here](notes.txt).
+the reverse engineering efforts are [here](notes.md).
 
 Vulnerabilities include:
 * Command injection in telnet interface: typing `ps ; sh` will run `ps` and drop to a shell. (CWE-77)
