@@ -176,3 +176,51 @@ This POC does NOT require authentication but however it DOES require an admin to
 the request will redirect to the login page. E.g., if the web client user clicks Logout, or if the router is rebooted,
 it no longer works. However, if I just close the browser without officially logging out, it does still work. This also
 applies to the XSS PoC.
+
+40. I've opened the case of the device, and found a UART pinout with a header. Looking at the cmdline, there is a
+shell on the UART.
+
+41. Looking on openwrt.org, the UART pinout is shown for the C1000a, as well as the bootup messages over the UART.
+The UART console has the same command injection problem as the telnet console (on openwrt.org, the example of running
+`echo && sh`, was shown, I used `ps ; sh` for telnet). The pinout is, from the right to the left (looking from the 
+front of the router, where the LED's are): GND, TX, RX. These can be tested with a multimeter, but I haven't tested
+it myself yet. Looking at the FCC pictures of the device, the underside of the board has a square pin where
+openwrt.org showed the GND pin is, which make sense as ground pins are usually the square ones.
+
+42. There is a problem using the built-in telnet on the system. Using the command injection exploit gets to a busybox
+shell, but telnetd error messages occasionally come on the screen (after 5 minutes or so), not allowing the user to
+enter any more commands into the shell, requiring a reconnect to the telnet server. I tried getting a static busybox
+MIPS binary, and using the busybox telnetd did not work as it could not allocate a pty. I found out that this was
+because busybox required Unix98 (`/dev/pts/x`) style PTYs, and didn't work with the BSD (`/dev/ttypx') style PTYs that
+were present on the router. I downloaded the GPL code for the C1000A from Actiontec. It came with a MIPS uClibc
+cross compiler toolchain. I compiled busybox with the toolchain, while configuring it to not use `/dev/pts` style
+PTYs. I put the binary on an USB drive, and attached it to the router. The telnet server worked, but there is no
+login binary, so I had to use `/bin/sh` as the login. Example: `/tmp/mnt/busybox telnetd -l/bin/sh -p 1337`. The
+non-vendor busybox binaries also come with nice things such as editors and other various utilities. A featured
+busybox is very helpful on a limited system.
+
+43. I decided to try to dump as much useful data as I could from the router that wouldn't be available on the firmware
+image. I dumped all the `/dev/mtd*` filesystems, which are the flash memory (there is a data partition not available
+from the firmware image). I dumped the ram into a file (`/dev/mem`). I also dumped the nvram data. Inside the RAM dump,
+I could grep for the admin password and I found it, as well as the WLAN password in plaintext. In the `/dev/mtd3` 
+(nvram) dump, I could grep and find the plaintext password and the WLAN password. I dumped the memory like so
+`/tmp/mnt/busybox dd if=/dev/mem of=/tmp/mnt/c/memer_mem.bin bs=1k count=64000`.
+
+44. The file `cferam.534` (the extension varies, but it starts with cferam) contains memory for the CFE bootloader.
+Running strings on the file shows boot options and usage of those options, as well as an HTML file allowing a user to
+upload a new firmware image (this is a pre-boot environment).
+
+45. In /etc/passwd, all users (none except admin are ever used, admin takes the place of root) have the UID 0, which
+defeats the purpose of multiple users.
+
+46. Also on openwrt.org's [article](https://openwrt.org/toh/actiontec/c1000a) about the C1000A, looking at the bootup
+messages, the plaintext password and the WLAN PSK are printed out over the UART.
+
+47. I dumped some more info from the proc filesystem, such as cpuinfo and `/proc/bus/pci/devices`. According to that
+and lspci, there is a PCI Express port somewhere.
+
+48. Decompiling httpd, in the function to handle HTTP requests, there is a part which checks if the path requested 
+matches "FactoryTelnetctl.cmd". I tried sending a POST request to it with cURL, and I got returned "This page is
+not supported". Trying any page with the extension ".cmd", I get the same thing. Trying with a different extension, I
+get page not found instead. It does require authentication even if it did work, however.
+

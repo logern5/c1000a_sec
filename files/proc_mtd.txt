@@ -1,0 +1,7 @@
+dev:    size   erasesize  name
+mtd0: 01d78000 00004000 "rootfs"
+mtd1: 01d78000 00004000 "rootfs_update"
+mtd2: 00400000 00004000 "data"
+mtd3: 00004000 00004000 "nvram"
+mtd4: 00004000 00004000 "tag"
+mtd5: 00004000 00004000 "tag_update"
