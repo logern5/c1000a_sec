@@ -1,3 +1,5 @@
+/* This is the encryption algorithm used for passwords in /etc/default.cfg on the Actiontec C1000A*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

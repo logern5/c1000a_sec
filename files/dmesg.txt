@@ -1,0 +1,350 @@
+01:00.0: PME# supported from D0 D3hot
+<6>pci 0000:01:00.0: PME# disabled
+<6>pci 0000:01:00.0: PCI bridge, secondary bus 0000:02
+<6>pci 0000:01:00.0:   IO window: disabled
+<6>pci 0000:01:00.0:   MEM window: disabled
+<6>pci 0000:01:00.0:   PREFETCH window: disabled
+<7>PCI: Setting latency timer of device 0000:01:00.0 to 64
+<4>[0;34mBLOG v3.0 Initialized[0m
+<4>BLOG Rule v1.0 Initialized
+<4>Broadcom IQoS v0.1 Mar 19 2018 10:01:19 initialized
+<4>Broadcom GBPM v0.1 Mar 19 2018 10:01:20 initialized
+<6>NET: Registered protocol family 8
+<6>NET: Registered protocol family 20
+<6>NET: Registered protocol family 2
+<6>IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+<6>TCP established hash table entries: 2048 (order: 2, 16384 bytes)
+<6>TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+<6>TCP: Hash tables configured (established 2048 bind 2048)
+<6>TCP reno registered
+<6>NET: Registered protocol family 1
+<6>JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+<6>fuse init (API version 7.11)
+<6>msgmni has been set to 114
+<6>io scheduler noop registered (default)
+<7>PCI: Setting latency timer of device 0000:01:00.0 to 64
+<4>Driver 'sd' needs updating - please use bus_type methods
+<6>PPP generic driver version 2.4.2
+<6>PPP Deflate Compression module registered
+<6>PPP BSD Compression module registered
+<6>NET: Registered protocol family 24
+<6>tun: Universal TUN/TAP device driver, 1.6
+<6>tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+<4>bcm963xx_mtd driver v2.0
+<4> ##init_brcm_physmap exit
+<6>Broadcom DSL NAND controller (BrcmNand Controller)
+<4>-->brcmnand_scan: CS=0, numchips=1, csi=0
+<6>mtd->oobsize=0, mtd->eccOobSize=0
+<4>NAND_CS_NAND_XOR=00000000
+<4>Disabling XOR on CS#0
+<4>brcmnand_scan: Calling brcmnand_probe for CS=0
+<4>B4: NandSelect=40000001, nandConfig=04042300, chipSelect=0
+<4>brcmnand_read_id: CS0: dev_id=20762076
+<4>After: NandSelect=40000001, nandConfig=04042300
+<4>Block size=00004000, erase shift=14
+<6>NAND Config: Reg=04042300, chipSize=64 MB, blockSize=16K, erase_shift=e
+<6>busWidth=1, pageSize=512B, page_shift=9, page_mask=000001ff
+<4>timing1 not adjusted: 6574845b
+<4>timing2 not adjusted: 00001e96
+<4>brcmnand_adjust_acccontrol: gAccControl[CS=0]=00000000, ACC=f7ff1010
+<6>BrcmNAND mfg 20 76 ST ST_NAND512W3A 64MB on CS0
+<6>
+<6>Found NAND on CS0: ACC=f7ff1010, cfg=04042300, flashId=20762076, tim1=6574845b, tim2=00001e96
+<6>BrcmNAND version = 0x0400 64MB @00000000
+<4>brcmnand_scan: Done brcmnand_probe
+<4>brcmnand_scan: B4 nand_select = 40000001
+<4>brcmnand_scan: After nand_select = 40000001
+<4>100 CS=0, chip->ctrl->CS[0]=0
+<4>ECC level 15, threshold at 1 bits
+<4>reqEccLevel=0, eccLevel=15
+<4>190 eccLevel=15, chip->ecclevel=15, acc=f7ff1010
+<4>brcmnand_scan 10
+<4>200 CS=0, chip->ctrl->CS[0]=0
+<4>200 chip->ecclevel=15, acc=f7ff1010
+<6>page_shift=9, bbt_erase_shift=14, chip_shift=26, phys_erase_shift=14
+<4>brcmnand_scan 220
+<6>Brcm NAND controller version = 4.0 NAND flash size 64MB @1c000000
+<4>brcmnand_scan 230
+<4>brcmnand_scan 40, mtd->oobsize=16, chip->ecclayout=00000000
+<4>brcmnand_scan 42, mtd->oobsize=16, chip->ecclevel=15, isMLC=0, chip->cellinfo=0
+<6>brcmnand_scan:  mtd->oobsize=16
+<6>brcmnand_scan: oobavail=12, eccsize=512, writesize=512
+<6>brcmnand_scan, eccsize=512, writesize=512, eccsteps=1, ecclevel=15, eccbytes=3
+<4>300 CS=0, chip->ctrl->CS[0]=0
+<4>500 chip=83a38190, CS=0, chip->ctrl->CS[0]=0
+<4>-->brcmnand_default_bbt
+<4>brcmnand_default_bbt: bbt_td = bbt_main_descr
+<7>Bad block table Bbt0 found at page 0001ffe0, version 0x01 for chip on CS0
+<7>Bad block table 1tbB found at page 0001ffc0, version 0x01 for chip on CS0
+<6>brcmnandCET: Status -> Deferred
+<4>brcmnand_scan 99
+<5>Creating 6 MTD partitions on "brcmnand.0":
+<5>0x000000008000-0x000001d80000 : "rootfs"
+<5>0x000001d84000-0x000003afc000 : "rootfs_update"
+<5>0x000003b00000-0x000003f00000 : "data"
+<5>0x000000000000-0x000000004000 : "nvram"
+<5>0x000000004000-0x000000008000 : "tag"
+<5>0x000001d80000-0x000001d84000 : "tag_update"
+<6>ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+<4>PCI: Enabling device 0000:00:0a.0 (0000 -> 0002)
+<7>PCI: Setting latency timer of device 0000:00:0a.0 to 64
+<6>ehci_hcd 0000:00:0a.0: EHCI Host Controller
+<6>ehci_hcd 0000:00:0a.0: new USB bus registered, assigned bus number 1
+<4>ehci_hcd 0000:00:0a.0: Enabling legacy PCI PM
+<6>ehci_hcd 0000:00:0a.0: irq 18, io mem 0x10002500
+<6>ehci_hcd 0000:00:0a.0: USB f.f started, EHCI 1.00
+<6>usb usb1: configuration #1 chosen from 1 choice
+<6>hub 1-0:1.0: USB hub found
+<6>hub 1-0:1.0: 2 ports detected
+<6>ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+<4>PCI: Enabling device 0000:00:09.0 (0000 -> 0002)
+<7>PCI: Setting latency timer of device 0000:00:09.0 to 64
+<6>ohci_hcd 0000:00:09.0: OHCI Host Controller
+<6>ohci_hcd 0000:00:09.0: new USB bus registered, assigned bus number 2
+<6>ohci_hcd 0000:00:09.0: irq 17, io mem 0x10002600
+<6>usb usb2: configuration #1 chosen from 1 choice
+<6>hub 2-0:1.0: USB hub found
+<6>hub 2-0:1.0: 2 ports detected
+<6>usbcore: registered new interface driver usblp
+<6>Initializing USB Mass Storage driver...
+<6>usbcore: registered new interface driver usb-storage
+<6>USB Mass Storage support registered.
+<4>brcmboard: brcm_board_init entry
+<4>SES: Button Interrupt 0x1 is enabled
+<4>sesBtn_mapIntr: is_sesBtn_irq_shared=0, sesBtn_irq=1
+<4>SES: LED GPIO 0x8012 is enabled
+<4>PCIe: No device found - Powering down
+<4>brcm_board_init: isShared=0, rstToDflt_irq=0
+<6>Serial: BCM63XX driver $Revision: 3.00 $
+<6>[0;33mMagic SysRq enabled (type ^ h for list of supported commands)[0m
+<6>ttyS0 at MMIO 0xb0000180 (irq = 13) is a BCM63XX
+<6>ttyS1 at MMIO 0xb00001a0 (irq = 42) is a BCM63XX
+<4>Total # RxBds=1448
+<4>bcmPktDmaBds_init: Broadcom Packet DMA BDs initialized
+<4>
+<4>bcmPktDma_init: Broadcom Packet DMA Library initialized
+<4>bcmxtmrt: Broadcom BCM3168D0 ATM/PTM Network Device v0.5 Mar 19 2018 10:01:09
+<3>IPSEC SPU: SUCCEEDED 
+<4>GACT probability NOT on
+<4>Mirror/redirect action on
+<4>u32 classifier
+<4>    input device check on 
+<4>    Actions configured 
+<6>TCP cubic registered
+<6>Initializing XFRM netlink socket
+<6>NET: Registered protocol family 10
+<6>IPv6 over IPv4 tunneling driver
+<6>NET: Registered protocol family 17
+<6>NET: Registered protocol family 15
+<6>Initializing MCPD Module
+<6>Ebtables v2.0 registered
+<6>ebt_time registered
+<6>ebt_ftos registered
+<6>ebt_wmm_mark registered
+<6>802.1Q VLAN Support v1.8 Ben Greear <greearb@candelatech.com>
+<6>All bugs added by David S. Miller <davem@redhat.com>
+<4>VFS: Mounted root (jffs2 filesystem) readonly on device 31:0.
+<6>Freeing unused kernel memory: 156k freed
+<4>bcm96368wdt: module license 'unspecified' taints kernel.
+<4>Disabling lock debugging due to kernel taint
+<6>watchdog init_module() called
+<4>brcmchipinfo: brcm_chipinfo_init entry
+<4>Broadcom Ingress QoS Module  Char Driver v0.1 Mar 19 2018 09:59:55 Registered<243>[0m
+<4>
+<4>Broadcom Ingress QoS ver 0.1 initialized
+<4>BPM: tot_mem_size=67108864B (64MB), buf_mem_size=10066320B (9MB), num of buffers=4730, buf size=2128
+<4>Broadcom BPM Module Char Driver v0.1 Mar 19 2018 09:59:03 Registered<244>[0m
+<4>[0;34m[NTC bpm] bpm_set_status: BPM status : enabled 
+<4>[0m
+<4>NBUFF v1.0 Initialized
+<4>[0;36;44mInitialized fcache state[0m
+<4>[0;36;44mBroadcom Packet Flow Cache  Char Driver v2.2 Mar 19 2018 09:59:55 Registered<242>[0m
+<4>Created Proc FS /procfs/fcache
+<4>[0;36;44mBroadcom Packet Flow Cache registered with netdev chain[0m
+<4>[0;36;44mBroadcom Packet Flow Cache learning via BLOG enabled.[0m
+<4>[0;36;44mConstructed Broadcom Packet Flow Cache v2.2 Mar 19 2018 09:59:55[0m
+<4>chipId 0x631680D0
+<4>Broadcom Forwarding Assist Processor (FAP) Char Driver v0.1 Mar 19 2018 09:59:51 Registered <241>
+<4>Enabling SMISBUS PHYS_FAP_BASE[0] is 0x10c01000
+<4>FAP Soft Reset Done
+<4>4ke Reset Done
+<4>Enabling SMISBUS PHYS_FAP_BASE[1] is 0x10c01000
+<4>FAP Soft Reset Done
+<4>4ke Reset Done
+<4>FAP Debug values at 0xa251e3b0 0xa259e3b0
+<4>Allocated FAP0 GSO Buffers (0xA252F438) : 1048576 bytes @ 0xA2600000
+<4>Allocated FAP1 GSO Buffers (0xA25AF438) : 1048576 bytes @ 0xA2700000
+<4>Allocated FAP0 TM SDRAM Queue Storage (a252f43c) : 341376 bytes @ a2000000
+<4>Allocated FAP1 TM SDRAM Queue Storage (a25af43c) : 341376 bytes @ a2080000
+<4>[0;34m[NTC fapProto] fapReset  : Reset FAP Protocol layer[0m
+<4>fapDrv_construct: FAP0: pManagedMemory=b0820650. wastage 8 bytes
+<4>fapDrv_construct: FAP1: pManagedMemory=b0a20650. wastage 8 bytes
+<4>bcmPktDma_bind: FAP Driver binding successfull
+<4>[FAP0] DSPRAM : stack <0x80000000><1536>, global <0x80000600><3976>, free <2680>, total<8192>
+<4>[FAP1] DSPRAM : stack <0x80000000><1536>, global <0x80000600><3976>, free <2680>, total<8192>
+<4>[FAP0] PSM : addr<0x80002000>, used <23452>, free <1124>, total <24576>
+<4>[FAP1] PSM : addr<0x80002000>, used <23452>, free <1124>, total <24576>
+<4>[FAP0] DQM : availableMemory 14652 bytes, nextByteAddress 0xE0004948
+<4>[FAP1] DQM : availableMemory 14652 bytes, nextByteAddress 0xE0004948
+<4>[FAP0] GSO Buffer set to 0xA2600000
+<4>[FAP1] GSO Buffer set to 0xA2700000
+<4>[FAP0] FAP BPM Initialized.
+<4>[FAP1] FAP BPM Initialized.
+<4>[FAP0] FAP TM: ON
+<4>[FAP1] FAP TM: ON
+<4>bcmxtmcfg: bcmxtmcfg_init entry
+<4>adsl: adsl_init entry
+<4>Broadcom BCM63168D0 Ethernet Network Device v0.1 Mar 19 2018 10:01:04
+<4>Broadcom GMAC Char Driver v0.1 Mar 19 2018 10:01:08 Registered<249>[0m
+<4>Broadcom GMAC Driver v0.1 Mar 19 2018 10:01:08 Initialized
+<4>fapDrv_psmAlloc: fapIdx=1, size: 4800, offset=b0a20650 bytes remaining 7000
+<4>ETH Init: Ch:0 - 200 tx BDs at 0xb0a20650
+<4>fapDrv_psmAlloc: fapIdx=0, size: 4800, offset=b0820650 bytes remaining 7000
+<4>ETH Init: Ch:1 - 200 tx BDs at 0xb0820650
+<4>fapDrv_psmAlloc: wastage 8 bytes
+<4>fapDrv_psmAlloc: fapIdx=0, size: 4808, offset=b0821910 bytes remaining 2184
+<4>ETH Init: Ch:0 - 600 rx BDs at 0xb0821910
+<4>fapDrv_psmAlloc: wastage 8 bytes
+<4>fapDrv_psmAlloc: fapIdx=1, size: 4808, offset=b0a21910 bytes remaining 2184
+<4>ETH Init: Ch:1 - 600 rx BDs at 0xb0a21910
+<4>dgasp: kerSysRegisterDyingGaspHandler: bcmsw registered 
+<4>eth3: MAC Address: A0:A3:E2:42:7D:D0
+<4>eth2: MAC Address: A0:A3:E2:42:7D:D0
+<4>eth1: MAC Address: A0:A3:E2:42:7D:D0
+<4>eth0: MAC Address: A0:A3:E2:42:7D:D0
+<4>eth4: MAC Address: A0:A3:E2:42:7D:D0
+<4>eth5: MAC Address: A0:A3:E2:42:7D:D0
+<4>Broadcom BCM3168D0 USB Network Device v0.4a Mar 19 2018 10:00:00
+<4>usb0: MAC Address: A0 A3 E2 42 7D D3
+<4>usb0: Host MAC Address: A0 A3 E2 42 7D D4
+<3>hub 1-0:1.0: over-current change on port 2
+<4>USBD Initialization done status 0 
+<4>USB Link DOWN.
+<6>message received before monitor task is initialized kerSysSendtoMonitorTask 
+<4>[0;34m[NTC arl] arlEnable : Enabled ARL binding to FAP[0m
+<4>Broadcom Address Resolution Logic Processor (ARL) Char Driver v0.1 Mar 19 2018 09:59:03 Registered <245>
+<4>--SMP support
+<4>wl: dsl_tx_pkt_flush_len=338
+<4>wl: high_wmark_tot=3074
+<7>PCI: Setting latency timer of device 0000:00:00.0 to 64
+<4>wl: passivemode=1
+<4>wl: napimode=0
+<4>wl0: allocskbmode=1 currallocskbsz=512
+<4>Neither SPROM nor OTP has valid image
+<4>wl:srom/otp not programmed, using main memory mapped srom info(wombo board)
+<4>wl:loading /etc/wlan/bcm6362_map.bin
+<4>srom rev:8
+<4>wl: reading /etc/wlan/bcmcmn_nvramvars.bin, file size=16
+<4>wl0: Broadcom BCM435f 802.11 Wireless Controller 6.30.102.3.cpeCAC004-31.30L95.0
+<4>dgasp: kerSysRegisterDyingGaspHandler: wl0 registered 
+<4>Endpoint: endpoint_init entry
+<4>Endpoint: endpoint_init board id C1000B 
+<4>Endpoint: endpoint_init board id C1000B is not C2000A, exit.
+<4>p8021ag: p8021ag_init entry
+<6>Broadcom 802.1Q VLAN Interface, v0.1
+<4>###Tag1 signature(Actiontec),version(CAC004-31.30L.95),version2(CAH006-31.30L.95), version3(CAB004-31.30L.95),imageSequence(534)
+<4>###Tag2 signature(Actiontec),version(CAC003-31.30L.86),version2(CAH006-31.30L.86), version3(CAB002-31.30L.86),imageSequence(533)
+<6>ip_tables: (C) 2000-2006 Netfilter Core Team
+<4>Host MIPS Clock divider pwrsaving is enabled
+<4>Netfilter messages via NETLINK v0.30.
+<6>device eth0 entered promiscuous mode
+<6>ADDRCONF(NETDEV_UP): eth0: link is not ready
+<6>device eth1 entered promiscuous mode
+<6>ADDRCONF(NETDEV_UP): eth1: link is not ready
+<6>device eth2 entered promiscuous mode
+<6>ADDRCONF(NETDEV_UP): eth2: link is not ready
+<6>device eth3 entered promiscuous mode
+<6>ADDRCONF(NETDEV_UP): eth3: link is not ready
+<6>ADDRCONF(NETDEV_UP): usb0: link is not ready
+<6>device usb0 entered promiscuous mode
+<6>device wl0 entered promiscuous mode
+<6>br0: port 6(wl0) entering forwarding state
+<4>*** dslThread dslPid=1230
+<4>BcmAdsl_Initialize=0xC027D1D8, g_pFnNotifyCallback=0xC02C88A4
+<4>AdslCoreLoadImage: Single line PHY
+<4>lmemhdr[2]=0x100CE000, pAdslLMem[2]=0x100CE000
+<4>pSdramPHY=0xA3FFFFF8, 0xFFFFFFFF 0xFFFFFFFF
+<4>*** XfaceOffset: 0x65790 => 0x5FF90 ***
+<4>*** PhySdramSize got adjusted: 0xF56E4 => 0x129670 ***
+<4>AdslCoreSharedMemInit: shareMemSize=35184(35184)
+<4>AdslCoreHwReset:  pLocSbSta=805c0000 bkupThreshold=3072
+<4>AdslCoreHwReset:  AdslOemDataAddr = 0xA3FB4108
+<2>XdslMediaSearch: current media(0) --> 0x10608700
+<4>VersionInfo: A2pv6F039x1.d26h
+<4>***BcmDiagsMgrRegisterClient: 0 ***
+<4>dgasp: kerSysRegisterDyingGaspHandler: dsl0 registered 
+<4>fapDrv_psmAlloc: fapIdx=1, size: 1600, offset=b0a22be0 bytes remaining 584
+<4>XTM Init: Ch:0 - 200 rx BDs at 0xb0a22be0
+<4>fapDrv_psmAlloc: fapIdx=1, size: 128, offset=b0a23220 bytes remaining 456
+<4>XTM Init: Ch:1 - 16 rx BDs at 0xb0a23220
+<4>bcmxtmrt: PTM/ATM Non-Bonding Mode configured in system 
+<4>bcmxtmcfg: gulBondDslMonitorValid = 1 
+<4>nf_conntrack version 0.5.0 (1024 buckets, 8192 max)
+<4>--aei_wifi_monitor_flag=1
+<6>br0: port 6(wl0) entering disabled state
+<6>device wl0 left promiscuous mode
+<6>br0: port 6(wl0) entering disabled state
+<6>device wl0 entered promiscuous mode
+<6>br0: port 6(wl0) entering forwarding state
+<4>< SES_LED_OFF >
+<6>br0: port 6(wl0) entering disabled state
+<6>device wl0 left promiscuous mode
+<6>br0: port 6(wl0) entering disabled state
+<6>device wl0 entered promiscuous mode
+<6>br0: port 6(wl0) entering forwarding state
+<6>monitor task is initialized pid= 343 
+<4>[0;36;44mBroadcom Packet Flow Cache learning via BLOG enabled.[0m
+<2>eth4 (switch port: 11) Link UP -1 mbps half duplex
+<2>eth5 (switch port: 12) Link UP -1 mbps half duplex
+<4>< SES_LED_OFF >
+<4>< SES_LED_OFF >
+<4>< WSC_EVENTS_PROC_SUCC >
+<6>ip6_tables: (C) 2000-2006 Netfilter Core Team
+<4>backup_psi_number_blk=1 result=65536
+<4>backup_psi_number_blk=1 result=65536
+<4>httpd/1913: potentially unexpected fatal signal 6.
+<4>
+<4>Cpu 0
+<4>$ 0   : 00000000 10008d00 00000000 2b255000
+<4>$ 4   : 00000779 00000006 00000000 00000000
+<4>$ 8   : 00000000 80000008 80048204 ffffffec
+<4>$12   : 00000000 05204180 00000070 00000040
+<4>$16   : 7feb8a38 004d0000 004c8400 7feb1509
+<4>$20   : 00000000 004d5df0 7feab8c4 00000001
+<4>$24   : 00000400 2b265ca0                  
+<4>$28   : 2b2b3a70 7feab740 7feab760 2aba278c
+<4>Hi    : 0000007a
+<4>Lo    : b1620080
+<4>epc   : 2b265cc4 0x2b265cc4
+<4>    Tainted: P          
+<4>ra    : 2aba278c 0x2aba278c
+<4>Status: 00008d13    USER EXL IE 
+<4>Cause : 00000020
+<4>PrId  : 0002a080 (Broadcom4350)
+<4>
+<4>Userspace Call Trace: process httpd, pid 1913, signal 6
+<4>[<2b265cc4>] /lib/libc.so.0
+<4>[<2aba278c>] /lib/public/libcms_util.so
+<4>[<2ab90af4>] /lib/public/libcms_util.so
+<4>[<2ab912fc>] /lib/public/libcms_util.so
+<4>[<2acf3638>] /lib/private/libcms_core.so
+<4>[<2ac51a48>] /lib/private/libcms_core.so
+<4>[<00412e60>] /bin/httpd
+<4>[<2aba278c>] /lib/public/libcms_util.so
+<4>[<00000000>] /bin/httpd
+<2>Line 0: xDSL G.994 training
+<2>Line 0: xDSL link down
+<6>usb 1-1: new high speed USB device using ehci_hcd and address 2
+<6>usb 1-1: configuration #1 chosen from 1 choice
+<6>scsi0 : SCSI emulation for USB Mass Storage devices
+<7>usb-storage: device found at 2
+<7>usb-storage: waiting for device to settle before scanning
+<5>scsi 0:0:0:0: Direct-Access     SanDisk  Cruzer Blade     1.27 PQ: 0 ANSI: 6
+<7>usb-storage: device scan complete
+<5>sd 0:0:0:0: [sda] 30529536 512-byte hardware sectors: (15.6 GB/14.5 GiB)
+<5>sd 0:0:0:0: [sda] Write Protect is off
+<7>sd 0:0:0:0: [sda] Mode Sense: 43 00 00 00
+<3>sd 0:0:0:0: [sda] Assuming drive cache: write through
+<3>sd 0:0:0:0: [sda] Assuming drive cache: write through
+<6> sda: sda1 sda2
+<5>sd 0:0:0:0: [sda] Attached SCSI removable disk

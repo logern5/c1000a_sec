@@ -237,4 +237,6 @@ function runs in decrypt mode. Else, the function runs in encrypt mode.
 50. I put the code for that function into a C program. I looked at the passwords in the conf file. For example, the
 password 'ZXQsbX3B', which I knew would be 'admin'. I ran the code, and it returned 'YWRtaW4A', which base64 decoded
 comes out to 'admin'. There was a support console password, which in the config said it was hashed. It came out to be
-'$1$5z$0H9qcdX9vSwvLpIhy46Ez1', which running hashID said it was MD5-Crypt.
+'$1$5z$0H9qcdX9vSwvLpIhy46Ez1', which running hashID said it was MD5-Crypt. I still haven't been able to crack it.
+
+51. The `sh` command works fine from the UART shell (it doesn't require some extra password).
