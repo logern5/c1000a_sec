@@ -24,4 +24,4 @@ modified. (CWE-319)
 modified (CWE-319)
 * Plaintext passwords for the WLAN and for the admin user are stored as plaintext in the NVRAM (CWE-256)
 * [Weak 'encryption'](vulns/poc/AEI.c) (really just an obscure encoding algorithm, as no key is used) of passwords 
-in the router's configuration XML (`/etc/default.cfg`). (CWE-261)
+in the router's configuration XML (`/etc/default.cfg`). (CWE-261 and CWE-656)
