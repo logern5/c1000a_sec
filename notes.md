@@ -239,4 +239,5 @@ password 'ZXQsbX3B', which I knew would be 'admin'. I ran the code, and it retur
 comes out to 'admin'. There was a support console password, which in the config said it was hashed. It came out to be
 '$1$5z$0H9qcdX9vSwvLpIhy46Ez1', which running hashID said it was MD5-Crypt. I still haven't been able to crack it.
 
-51. The `sh` command works fine from the UART shell (it doesn't require some extra password).
+51. The `sh` command works fine from the UART shell (it doesn't require some extra password). The root filesystem
+can also be mounted read-write.
