@@ -21,5 +21,5 @@ To confirm the password is present:
 `grep $password dump.bin`
 NVRAM variables can also be shown with the command `nvram show`, but this shows only the WLAN password and not the administrator password.
 
-##Software download link:
+## Software download link:
 The vulnerable firmware image can be downloaded [here](http://qwest.centurylink.com/internethelp/modems/c1000a/firmware/CAC004-31.30L.95.img).

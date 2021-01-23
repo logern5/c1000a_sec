@@ -224,3 +224,17 @@ matches "FactoryTelnetctl.cmd". I tried sending a POST request to it with cURL, 
 not supported". Trying any page with the extension ".cmd", I get the same thing. Trying with a different extension, I
 get page not found instead. It does require authentication even if it did work, however.
 
+49. Logging into the UART, the admin password is printed, and it is asked for later, essentially making the UART
+unauthenticated. The commands from the admin console "logdest" and "loglevel" set the log destination (I set it
+to syslog) and loglevel (I set it to debug) for a certain application, in this case httpd. Looking at the log output
+it showed `AEI_cms_encode: @@@@@@aei encryption:<text>`, which the text was the same odd password encoding that I 
+found in the config XML files. I ran `strings` on the `/lib` directory on the filesystem, and grepped for
+"AEI_cms_encode", and found the function in `libcms_core.so`. Decompiling the library with Ghidra, I get a simple
+function that takes 2 arguments, a `char*` and a `char`. It seems to use a simple encoding that loops through the
+string and increments the characters by a certain amount to 'encrypt' it. When the second param is equal to 0, the
+function runs in decrypt mode. Else, the function runs in encrypt mode.
+
+50. I put the code for that function into a C program. I looked at the passwords in the conf file. For example, the
+password 'ZXQsbX3B', which I knew would be 'admin'. I ran the code, and it returned 'YWRtaW4A', which base64 decoded
+comes out to 'admin'. There was a support console password, which in the config said it was hashed. It came out to be
+'$1$5z$0H9qcdX9vSwvLpIhy46Ez1', which running hashID said it was MD5-Crypt.
