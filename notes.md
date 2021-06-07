@@ -241,3 +241,42 @@ comes out to 'admin'. There was a support console password, which in the config 
 
 51. The `sh` command works fine from the UART shell (it doesn't require some extra password). The root filesystem
 can also be mounted read-write.
+
+52. Three binaries seem to be responsible for the UART console (and/or the telnet console): `libcms_cli.so`,
+`consoled`, and `telnetd`. I found the first by grepping for "Actiontec xDSL", and the last by grepping for the
+function `cmsCli_printWelcomeBanner`.
+
+53. I also decided to extract the generic firmware from Actiontec (not CenturyLink branded), from their open source
+source code package. The file was called `bcm963268BGW_nand_cferom_fs_image_16_CAC004-31.30L.95-180726_1143.w` and I
+looked at its contents with binwalk (`binwalk *.w | cat | head | tee bw.txt`). Binwalk found a JFFS2 filesystem
+at offset 32768 (0x8000). I then used dd to extract it, using a block size of 32768 since it is a power of 2
+(`dd if=$(ls *.w) of=fs.jf2 bs=32768 skip=1`). Finally, I used jefferson to extract the filesystem
+(`jefferson fs.jf2 -d fs_extract`). Everything looks more or less the same as the CenturyLink firmware. A diff of
+the `tree` output only shows minor differences (right file being CL version, left being generic):
+```
+307a308,309
+> │   ├── libcrypto.so
+> │   ├── libcrypto.so.1.0.0
+329a332,333
+> │   ├── libssl.so
+> │   ├── libssl.so.1.0.0
+483a488
+> ├── qemu-mips-static
+532,534c537,539
+< │   └── log
+< │       └── sa
+< ├── vmlinux.lz
+---
+> │   ├── log
+> │   │   └── sa
+> │   └── (null)ffffffffffff.lock
+1005c1010
+< 52 directories, 950 files
+---
+> 52 directories, 955 files
+```
+The main differences are some SSL libraries, log files, and the `qemu-mips-static` binary (which I added), as well as the
+kernel image.
+
+54.
+

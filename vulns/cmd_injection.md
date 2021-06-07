@@ -9,6 +9,9 @@
 ## High level overview
 A command injection vulnerability in the telnetd server allows an authenticated remote attacker to execute arbitrary shell commands as root.
 
+## Product information
+CenturyLink branded Actiontec C1000A router running firmware version CAC004-31.30L.95 (the latest firmware version as of June 6, 2021).
+
 ## Analysis
 The telnetd in firmware version CAC004-31.30L.95 asks for authentication, which can be set on the web interface of the router. After authentication, the server allows
 the user to run a limited custom command set. Some of these commands include standard POSIX commands such as `pwd` and `ps`. The arguments for these commands are directly
