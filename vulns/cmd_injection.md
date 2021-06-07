@@ -21,7 +21,7 @@ the `sh` command could be run directly from the telnet console and it would drop
 command was still present, but locked behind a password which is different from the telnet or administrator password (presumably as a security measure), effectively
 disabling the shell.
 
-To fix this, commands from the telnet shell could be sent to exec() instead of system(), so arguments could only be supplied to one program instead of to the shell. 
+To fix this, commands from the telnet shell could be sent to `exec()` instead of `system()`, so arguments could only be supplied to one program instead of to the shell. 
 Another solution would be to filter out special characters such as semicolons, dollar signs, ampersands, and backticks.
 
 ## Proof of Concept / Verification:
