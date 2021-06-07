@@ -56,4 +56,4 @@ To fix this issue, in the CGI handling code, a check against the session ID need
 in the code which validates the session ID, AEI_validateSessionID().
 
 ## Proof of concept:
-[This](poc/auth_bypass_poc.sh) proof of concept written in bash enables the telnet daemon on the router and sets the telnet password to 'admin'
+[This](poc/auth_bypass.sh) proof of concept written in bash enables the telnet daemon on the router and sets the telnet password to 'admin'
