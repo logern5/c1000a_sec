@@ -19,7 +19,7 @@ sent to system(), for example, typing in `ps aux` would result in running `syste
 Typing in `pwd ; sh`, would result in running `system("pwd ; sh")`, which prints the working directory, and then executes a shell. In earlier versions of the firmware, 
 the `sh` command could be run directly from the telnet console and it would drop the user directory to a root shell. However, in version CAC004-31.30L.95, the `sh`
 command was still present, but locked behind a password which is different from the telnet or administrator password (presumably as a security measure), effectively
-disabling the shell.
+disabling the shell. The telnet password can be changed from the web interface, so in effect, an attacker with access to the web interface can access the telnet server, thereby gaining root access through this vulnerability.
 
 To fix this, commands from the telnet shell could be sent to `exec()` instead of `system()`, so arguments could only be supplied to one program instead of to the shell. 
 Another solution would be to filter out special characters such as semicolons, dollar signs, ampersands, and backticks.
